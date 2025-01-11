@@ -23,7 +23,7 @@ function generateFlowers() {
         flower.classList.add('flower');
         flower.style.left = Math.random() * 100 + 'vw';
         flower.style.animationDelay = Math.random() * 5 + 's';
-        flower.style.backgroundImage = "url('https://i.imgur.com/2xNq9Ui.png')"; // Flower image URL
+        flower.style.backgroundImage = "url('https://i.imgur.com/qN0zA0L.png')"; // Flower sticker URL
         flower.style.backgroundSize = 'contain';
         flower.style.backgroundRepeat = 'no-repeat';
         secondPage.appendChild(flower);
