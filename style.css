@@ -5,7 +5,7 @@ body, html {
     width: 100%;
     height: 100%;
     overflow: hidden;
-    font-family: 'Arial', sans-serif;
+    font-family: Arial, sans-serif;
 }
 
 /* Landing Page */
@@ -19,29 +19,17 @@ body, html {
     position: relative;
 }
 
-body::before {
-    content: '';
-    position: fixed;
+.background-animation {
+    position: absolute;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: url('https://source.unsplash.com/1600x900/?roses,flowers') no-repeat center center/cover;
-    filter: blur(4px) brightness(0.8);
+    width: 100%;
+    height: 100%;
     z-index: -1;
-    animation: zoom-in-out 6s infinite;
+    overflow: hidden;
 }
 
-@keyframes zoom-in-out {
-    0%, 100% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.1);
-    }
-}
-
-/* Landing Page Text & Button */
+/* Text & Button */
 .animated-title {
     font-size: 2.5rem;
     color: #fff;
@@ -115,7 +103,6 @@ body::before {
     align-items: center;
     height: 100vh;
     background: linear-gradient(to bottom, #ffcccc, #f7d6e0);
-    overflow: hidden;
     position: relative;
 }
 
@@ -135,22 +122,13 @@ body::before {
     text-align: center;
 }
 
-.flower-animation {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    z-index: -1;
-}
-
+/* Animation for Flowers */
 .flower {
     position: absolute;
     width: 40px;
     height: 40px;
-    background: no-repeat center/contain;
-    animation: fall 8s linear infinite;
+    background-size: contain;
+    animation: float 8s linear infinite;
 }
 
 .flower.rose {
@@ -165,13 +143,13 @@ body::before {
     background-image: url('https://source.unsplash.com/50x50/?sunflower');
 }
 
-@keyframes fall {
+@keyframes float {
     0% {
-        transform: translateY(-100px);
+        transform: translateY(-100px) translateX(0);
         opacity: 1;
     }
     100% {
-        transform: translateY(100vh);
+        transform: translateY(110vh) translateX(10px);
         opacity: 0.5;
     }
 }
