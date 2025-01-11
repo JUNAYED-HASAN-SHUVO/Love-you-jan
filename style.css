@@ -1,158 +1,92 @@
 /* General Styles */
-body, html {
+body {
     margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
     font-family: 'Arial', sans-serif;
+    background-color: #f8f1f4;
     overflow: hidden;
-    background-color: #ffe6f0;
 }
 
-/* Landing Page */
-.landing-page {
-    display: flex;
-    flex-direction: column;
+.page {
+    display: none;
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+    position: relative;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    background: linear-gradient(to bottom, #fce4ec, #ffccde);
-    position: relative;
+    flex-direction: column;
 }
 
-.background-animation {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    overflow: hidden;
+.page.active {
+    display: flex;
 }
 
-/* Landing Page Text & Button */
-.animated-title {
-    font-size: 2.5rem;
-    color: #fff;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-    animation: fade-in-down 3s ease-out;
-    text-align: center;
+.hidden {
+    display: none !important;
 }
 
-.subtitle {
-    font-size: 1.3rem;
-    color: #fff;
-    margin: 10px 0;
-    animation: fade-in-up 3s ease-out;
-    text-align: center;
+/* First Page Styles */
+#first-page {
+    background-image: url('https://www.transparenttextures.com/patterns/rose-petals.png');
+    background-size: cover;
+    background-position: center;
 }
 
-.cta-button {
-    background: #ff66b3;
-    color: #fff;
-    border: none;
-    padding: 15px 35px;
-    border-radius: 30px;
-    font-size: 1.2rem;
+.main-heading {
+    font-size: 3rem;
+    color: #d22b61;
+    margin: 20px 0;
     font-weight: bold;
-    cursor: pointer;
-    animation: pulse 2s infinite;
-    transition: all 0.3s ease-in-out;
 }
 
-.cta-button:hover {
-    background: #e63998;
+.message-text {
+    font-size: 1.5rem;
+    color: #6e2a44;
+    margin: 10px 20px;
+}
+
+.action-button {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    color: #fff;
+    background-color: #e91e63;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.action-button:hover {
+    background-color: #c2185b;
     transform: scale(1.1);
 }
 
-/* Proposal Page */
-.proposal-page {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background: linear-gradient(to bottom, #ffccde, #fce4ec);
-    position: relative;
-    overflow: auto;
+/* Second Page Styles */
+#second-page {
+    background-image: url('https://www.transparenttextures.com/patterns/roses.png');
+    background-size: cover;
+    background-position: center;
 }
 
-.proposal-title {
-    font-size: 3rem;
-    color: #ff66b3;
-    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
-    animation: fade-in-down 3s ease-out;
-    text-align: center;
+/* Flower Animation */
+@keyframes float {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
 }
 
-.proposal-text-container {
-    width: 90%;
-    max-height: 60%;
-    overflow-y: scroll;
-    margin-top: 20px;
-    padding: 10px;
-    background: rgba(255, 255, 255, 0.8);
-    border-radius: 10px;
-}
-
-.proposal-text {
-    font-size: 1.3rem;
-    color: #444;
-    line-height: 1.8;
-    text-align: center;
-}
-
-/* Floating Flowers and Hearts */
-.sticker {
+.flower {
     position: absolute;
     width: 50px;
     height: 50px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    animation: float 8s linear infinite;
-}
-
-.sticker.rose {
-    background-image: url('https://source.unsplash.com/50x50/?rose');
-}
-
-.sticker.heart {
-    background-image: url('https://source.unsplash.com/50x50/?heart');
-}
-
-.sticker.flower {
-    background-image: url('https://source.unsplash.com/50x50/?flower');
-}
-
-@keyframes fade-in-down {
-    0% {
-        opacity: 0;
-        transform: translateY(-50px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes fade-in-up {
-    0% {
-        opacity: 0;
-        transform: translateY(50px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes float {
-    0% {
-        transform: translateY(-100px) translateX(0);
-        opacity: 1;
-    }
-    100% {
-        transform: translateY(110vh) translateX(20px);
-        opacity: 0.7;
-    }
+    animation: float 5s linear infinite;
+    pointer-events: none;
 }
