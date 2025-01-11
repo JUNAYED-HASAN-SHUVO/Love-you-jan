@@ -3,42 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Special Message</title>
+    <title>Special Message</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Landing Page -->
-    <div class="landing-page" id="landingPage">
-        <h1 class="animated-title">Dear, You Are My Special Person!</h1>
-        <p class="subtitle">
-            I’ve been holding onto this feeling for so long, and today I want to share it with you.  
-            <br>  
-            Please take a moment to see this message from <strong>Shuvo</strong>.
+    <!-- First Page -->
+    <div id="first-page" class="page">
+        <h1 class="main-heading">To the Special Person in My Life</h1>
+        <p class="message-text">I have something very special to share with you. This message comes straight from my heart, and I hope it brings a smile to your face.</p>
+        <button id="see-message-button" class="action-button">See Message</button>
+    </div>
+
+    <!-- Second Page -->
+    <div id="second-page" class="page hidden">
+        <h1 class="main-heading">I Love You</h1>
+        <p class="message-text">
+            Your smile lights up my world. Your presence makes everything feel better. I cannot imagine my life without you. 
+            You are truly the most beautiful and special person I have ever met. I want you to know that you mean everything to me.
         </p>
-        <button class="cta-button" onclick="showProposal()">See My Message</button>
-        <div class="background-animation" id="landingAnimation"></div>
     </div>
 
-    <!-- Proposal Page -->
-    <div class="proposal-page" id="proposalPage" style="display: none;">
-        <div class="background-animation" id="proposalAnimation"></div>
-        <h1 class="proposal-title">I Love You</h1>
-        <div class="proposal-text-container">
-            <p class="proposal-text">
-                From the moment I saw you, I felt something I’ve never felt before.  
-                You are the sunshine that lights up my world, the melody that makes my heart dance.  
-                <br><br>
-                I want to spend my life making you smile, being your strength, and holding your hand through every moment.  
-                You complete me, and I can’t imagine my world without you in it.  
-                <br><br>
-                Will you allow me to be the one who makes your life as beautiful as you’ve made mine?  
-                <br><br>
-                You are my dream, my heart, my everything.  
-                I love you more than words can ever express.  
-            </p>
-        </div>
-    </div>
-
-    <script src="JavaScript.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
