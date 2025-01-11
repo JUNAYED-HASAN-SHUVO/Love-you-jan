@@ -1,67 +1,50 @@
 /* General Styles */
-body {
+body, html {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    color: #333;
 }
 
-.page {
-    display: none;
-    height: 100vh;
-    width: 100%;
-    text-align: center;
-    position: relative;
+.container {
+    display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-}
-
-.page.active {
-    display: flex;
-}
-
-.hidden {
-    display: none !important;
+    height: 100vh;
+    text-align: center;
 }
 
 /* First Page Styles */
 #first-page {
-    background-color: #ffffff;
-    color: #333;
-}
-
-.main-heading {
-    font-size: 3rem;
-    color: #333;
-    margin: 20px 0;
-    font-weight: bold;
-}
-
-.message-text {
-    font-size: 1.5rem;
-    color: #555;
-    margin: 10px 20px;
-}
-
-.action-button {
-    padding: 15px 30px;
-    font-size: 1.2rem;
+    background-image: url('images%20(21).jpeg'); /* Background Image from repository */
+    background-size: cover;
+    background-position: center;
     color: #fff;
-    background-color: #007BFF;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all 0.3s ease;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
-.action-button:hover {
-    background-color: #0056b3;
-    transform: scale(1.1);
+h1, p {
+    margin: 10px 0;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #ff6f61;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #ff3b2f;
 }
 
 /* Second Page Styles */
 #second-page {
-    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0IRGPOmaS3XON7APuixJjUzKvzuGvWP1beO-SQuVP6wmEHdv31vPjJipR&s=10');
+    background-image: url('images%20(21).jpeg'); /* Background Image from repository */
     background-size: cover;
     background-position: center;
     color: #fff;
@@ -69,13 +52,11 @@ body {
 }
 
 .main-heading {
-    font-size: 3.5rem;
-    margin: 20px 0;
-    font-weight: bold;
+    font-size: 36px;
+    margin-bottom: 20px;
 }
 
 .message-text {
-    font-size: 1.8rem;
-    margin: 20px 30px;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    font-size: 20px;
+    margin: 10px 0;
 }
