@@ -2,7 +2,7 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #fdf1f4;
+    background-color: #f0f0f0;
 }
 
 .page {
@@ -26,22 +26,20 @@ body {
 
 /* First Page Styles */
 #first-page {
-    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0IRGPOmaS3XON7APuixJjUzKvzuGvWP1beO-SQuVP6wmEHdv31vPjJipR&s=10');
-    background-size: cover;
-    background-position: center;
-    color: #fff;
+    background-color: #ffffff;
+    color: #333;
 }
 
 .main-heading {
     font-size: 3rem;
-    color: #f8d7e3;
+    color: #333;
     margin: 20px 0;
     font-weight: bold;
 }
 
 .message-text {
     font-size: 1.5rem;
-    color: #fce4ec;
+    color: #555;
     margin: 10px 20px;
 }
 
@@ -49,7 +47,7 @@ body {
     padding: 15px 30px;
     font-size: 1.2rem;
     color: #fff;
-    background-color: #e91e63;
+    background-color: #007BFF;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -57,7 +55,7 @@ body {
 }
 
 .action-button:hover {
-    background-color: #c2185b;
+    background-color: #0056b3;
     transform: scale(1.1);
 }
 
@@ -67,13 +65,13 @@ body {
     background-size: cover;
     background-position: center;
     color: #fff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 .main-heading {
     font-size: 3.5rem;
     margin: 20px 0;
     font-weight: bold;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 .message-text {
