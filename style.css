@@ -1,128 +1,108 @@
 /* General Styles */
-body {
+body, html {
     margin: 0;
-    font-family: 'Georgia', serif;
+    padding: 0;
+    width: 100%;
+    height: 100%;
     overflow: hidden;
-}
-
-.screen {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #fbe8e7;
-    background-image: url('https://i.imgur.com/CQybAl5.jpg'); /* Rose background image */
-    background-size: cover;
-    background-position: center;
-    position: relative;
-}
-
-.hidden {
-    display: none;
-}
-
-/* Intro Screen */
-.message-box {
-    text-align: center;
-    background: rgba(255, 105, 135, 0.8);
-    color: white;
-    padding: 20px 30px;
-    border-radius: 15px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    animation: fadeIn 1.5s ease-in-out;
-}
-
-.message-box p {
-    font-size: 1.5rem;
-    margin-bottom: 15px;
     font-family: 'Cursive', sans-serif;
 }
 
-.message-box button {
-    padding: 12px 25px;
-    border: none;
-    border-radius: 8px;
-    background: white;
-    color: #ff6b81;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: transform 0.3s ease-in-out, background 0.3s;
-}
-
-.message-box button:hover {
-    transform: scale(1.1);
-    background: #ffe5eb;
-}
-
-/* Proposal Screen */
-#proposal-screen {
-    background: linear-gradient(to top right, rgba(255, 105, 135, 0.9), rgba(255, 183, 197, 0.7));
-    overflow: hidden;
+.landing-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to bottom, #f7d6e0, #ffcccc);
     position: relative;
 }
 
-.proposal-text {
-    position: relative;
-    z-index: 2;
-    text-align: center;
-    color: #fff;
-    font-family: 'Dancing Script', cursive;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-    animation: slideIn 1.5s ease-in-out;
-}
-
-.proposal-text h1 {
-    font-size: 3rem;
-    margin-bottom: 20px;
-    animation: bounce 2s infinite;
-}
-
-.proposal-text p {
-    font-size: 1.4rem;
-}
-
-/* Rose Animation */
-#rose-container {
+/* Animated Background */
+body::before {
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 1;
-    overflow: hidden;
+    background: url('https://source.unsplash.com/featured/?roses,flowers') no-repeat center center/cover;
+    filter: blur(4px) brightness(0.8);
+    z-index: -1;
+    animation: zoom-in-out 6s infinite;
 }
 
-.rose {
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    background: url('https://i.imgur.com/Wz1pAly.png') no-repeat center/contain;
-    animation: fall 5s infinite linear;
-    pointer-events: none;
+@keyframes zoom-in-out {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
 }
 
-@keyframes fadeIn {
-    0% { opacity: 0; transform: scale(0.8); }
-    100% { opacity: 1; transform: scale(1); }
+/* Title Animation */
+.animated-title {
+    font-size: 3rem;
+    color: #fff;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    animation: fade-in-down 3s ease-out;
 }
 
-@keyframes slideIn {
-    0% { opacity: 0; transform: translateY(50px); }
-    100% { opacity: 1; transform: translateY(0); }
+.subtitle {
+    font-size: 1.5rem;
+    color: #fff;
+    margin: 10px 0;
+    animation: fade-in-up 3s ease-out;
 }
 
-@keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
+.cta-button {
+    background: #ff6584;
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 25px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    animation: pulse 2s infinite;
+    transition: all 0.3s ease-in-out;
 }
 
-@keyframes fall {
+.cta-button:hover {
+    background: #e30050;
+    transform: scale(1.1);
+}
+
+/* Button and Title Animations */
+@keyframes fade-in-down {
     0% {
-        transform: translateY(-100%);
-        opacity: 1;
+        opacity: 0;
+        transform: translateY(-50px);
     }
     100% {
-        transform: translateY(100vh);
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fade-in-up {
+    0% {
         opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
     }
 }
