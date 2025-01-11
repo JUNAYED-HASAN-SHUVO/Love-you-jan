@@ -1,0 +1,128 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: 'Georgia', serif;
+    overflow: hidden;
+}
+
+.screen {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fbe8e7;
+    background-image: url('https://i.imgur.com/CQybAl5.jpg'); /* Rose background image */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Intro Screen */
+.message-box {
+    text-align: center;
+    background: rgba(255, 105, 135, 0.8);
+    color: white;
+    padding: 20px 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.message-box p {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    font-family: 'Cursive', sans-serif;
+}
+
+.message-box button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    background: white;
+    color: #ff6b81;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, background 0.3s;
+}
+
+.message-box button:hover {
+    transform: scale(1.1);
+    background: #ffe5eb;
+}
+
+/* Proposal Screen */
+#proposal-screen {
+    background: linear-gradient(to top right, rgba(255, 105, 135, 0.9), rgba(255, 183, 197, 0.7));
+    overflow: hidden;
+    position: relative;
+}
+
+.proposal-text {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: #fff;
+    font-family: 'Dancing Script', cursive;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    animation: slideIn 1.5s ease-in-out;
+}
+
+.proposal-text h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    animation: bounce 2s infinite;
+}
+
+.proposal-text p {
+    font-size: 1.4rem;
+}
+
+/* Rose Animation */
+#rose-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.rose {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: url('https://i.imgur.com/Wz1pAly.png') no-repeat center/contain;
+    animation: fall 5s infinite linear;
+    pointer-events: none;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; transform: scale(0.8); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slideIn {
+    0% { opacity: 0; transform: translateY(50px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-100%);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+}
