@@ -4,15 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Love Proposal</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="landing-page">
+    <div class="landing-page" id="landingPage">
         <h1 class="animated-title">Dear, I have a message for you!</h1>
         <p class="subtitle">From <strong>Shuvo</strong> sir</p>
-        <button class="cta-button" onclick="showMessage()">See Shuvo's Message</button>
+        <button class="cta-button" onclick="showProposal()">See Shuvo's Message</button>
     </div>
 
-    <script src="script.js"></script>
+    <div class="proposal-page" id="proposalPage" style="display: none;">
+        <div class="roses-animation" id="rosesAnimation"></div>
+        <h1 class="proposal-title">Will You Be My Forever?</h1>
+        <p class="proposal-text">I promise to always make you smile and be by your side through all ups and downs.</p>
+    </div>
+
+    <script src="JavaScript.js"></script>
 </body>
 </html>
