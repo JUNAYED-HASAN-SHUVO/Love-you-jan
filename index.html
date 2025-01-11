@@ -1,34 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Love You Page</title>
+  <title>A Special Message for You</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <!-- First Page -->
-    <div id="first-page" class="container">
-        <div>
-            <h1>Yours Special Person of My Life</h1>
-            <p>I have a message for you</p>
-            <button onclick="openSecondPage()">See Message</button>
-        </div>
+  <div id="page1">
+    <div class="container">
+      <div class="content">
+        <h1>A Special Message for You</h1>
+        <p>I think you're a special person, and I wanted to create something special for you.</p>
+        <p>You make my world brighter just by being in it.</p>
+        <p>I've been thinking about you a lot lately, and I realized that I want to spend the rest of my life with you.</p>
+        <button onclick="showPage2()">See Message</button>
+      </div>
     </div>
+  </div>
 
-    <!-- Second Page -->
-    <div id="second-page" class="container">
-        <h1 class="main-heading">I Love You</h1>
-        <p class="message-text">Your smile lights up my world</p>
-        <p class="message-text">I adore everything about you</p>
+  <div id="page2" style="display: none;"> 
+    <div class="container">
+      <div class="content">
+        <h1 class="love-message">I Love You</h1>
+        <p>Your smile makes me happy. I want you permanently. I want to make you my wife.</p>
+        <p>You're the most amazing person I've ever met, and I feel so lucky to have you in my life.</p>
+        <p>I can't wait to spend the rest of my life with you.</p>
+      </div>
     </div>
+  </div>
 
-    <script>
-        function openSecondPage() {
-            window.location.href = 'index.html#second-page';
-        }
-    </script>
-
+  <script src="script.js"></script>
 </body>
 </html>
