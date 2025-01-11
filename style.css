@@ -1,62 +1,59 @@
-/* General Styles */
-body, html {
-    margin: 0;
-    padding: 0;
-    font-family: 'Arial', sans-serif;
-    color: #333;
+body {
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-image: url('images (21).jpeg'); /* Replace with actual image URL */
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  text-align: center;
 }
 
 .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    text-align: center;
+  background-color: rgba(0, 0, 0, 0.5); 
+  padding: 40px;
+  border-radius: 10px;
 }
 
-/* First Page Styles */
-#first-page {
-    background-image: url('images%20(21).jpeg'); /* Background Image from repository */
-    background-size: cover;
-    background-position: center;
-    color: #fff;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+.content {
+  max-width: 400px;
+  margin: 0 auto;
 }
 
-h1, p {
-    margin: 10px 0;
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
 }
 
 button {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #ff6f61;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+  background-color: #ff69b4; 
+  color: #fff;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 button:hover {
-    background-color: #ff3b2f;
+  background-color: #ff4d94;
 }
 
-/* Second Page Styles */
-#second-page {
-    background-image: url('images%20(21).jpeg'); /* Background Image from repository */
-    background-size: cover;
-    background-position: center;
-    color: #fff;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+.love-message {
+  font-size: 3rem;
+  color: #ff69b4; 
+  margin-bottom: 30px;
+  text-shadow: 0 0 5px #fff; 
 }
 
-.main-heading {
-    font-size: 36px;
-    margin-bottom: 20px;
-}
-
-.message-text {
-    font-size: 20px;
-    margin: 10px 0;
+#page2 {
+  display: none; /* Initially hide the second page */
 }
