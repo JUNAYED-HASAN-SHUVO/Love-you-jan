@@ -1,9 +1,8 @@
 /* General Styles */
 body {
     margin: 0;
-    font-family: 'Arial', sans-serif;
+    font-family: Arial, sans-serif;
     background-color: #f8f1f4;
-    overflow: hidden;
 }
 
 .page {
@@ -27,7 +26,7 @@ body {
 
 /* First Page Styles */
 #first-page {
-    background-image: url('https://www.transparenttextures.com/patterns/rose-petals.png');
+    background-image: url('https://i.imgur.com/6dDFHSh.jpg'); /* Replace with a valid rose background image URL */
     background-size: cover;
     background-position: center;
 }
@@ -63,7 +62,7 @@ body {
 
 /* Second Page Styles */
 #second-page {
-    background-image: url('https://www.transparenttextures.com/patterns/roses.png');
+    background-image: url('https://i.imgur.com/RzIi1P5.png'); /* Replace with a valid flower background image URL */
     background-size: cover;
     background-position: center;
 }
