@@ -1,0 +1,243 @@
+/* Import a cool, modern font (optional but recommended) */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+body {
+    font-family: 'Orbitron', sans-serif; /* Apply the new font */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: #1a1a2e; /* Dark space background */
+    color: #e0e0e0;
+    padding: 10px;
+    box-sizing: border-box;
+    min-height: 100vh;
+}
+
+#game-container {
+    width: 100%;
+    max-width: 500px;
+    height: 90vh;
+    max-height: 600px; /* Increased height for better aesthetics */
+    border: 2px solid #00f2ff;
+    border-radius: 20px; /* Rounded corners */
+    margin: 10px 0;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(to top, #16222a, #3a6073); /* Sky gradient */
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 25px rgba(0, 242, 255, 0.5); /* Glowing effect */
+}
+
+#plane-area {
+    width: 100%;
+    height: 70%; /* Adjusted height */
+    position: relative;
+    border-bottom: 2px dashed rgba(255, 255, 255, 0.2);
+}
+
+#plane {
+    width: 60px; /* Slightly larger plane */
+    height: 25px;
+    background-color: #ffc700;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    transition: all 0.1s ease-out;
+    border-radius: 15px 15px 5px 5px; /* Shaped like a simple plane */
+    box-shadow: 0 0 15px #ffc700; /* Plane glow */
+}
+/* Adding a cockpit */
+#plane::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: 10px;
+    width: 15px;
+    height: 10px;
+    background: #00f2ff;
+    border-radius: 50%;
+}
+
+#explosion {
+    width: 80px;
+    height: 80px;
+    background: radial-gradient(circle, white, #ffc700, #ff4d00); /* Fiery explosion */
+    border-radius: 50%;
+    position: absolute;
+    transform: scale(0);
+}
+
+.explode {
+    animation: explode 0.4s ease-out forwards;
+}
+
+@keyframes explode {
+    0% { transform: scale(0); opacity: 1; }
+    100% { transform: scale(2); opacity: 0; }
+}
+
+#multiplier {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 4.5em; /* Larger font */
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0 0 10px #fff, 0 0 20px #00f2ff, 0 0 30px #00f2ff; /* Glowing text */
+}
+
+#controls {
+    display: flex;
+    flex-direction: column; /* Stack controls vertically */
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.2);
+    gap: 15px; /* Space between controls */
+    flex-grow: 1;
+}
+
+.balance-container {
+    font-size: 1.2em;
+    color: #00f2ff;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 5px 15px;
+    border-radius: 10px;
+}
+#balance {
+    color: #fff;
+    font-weight: bold;
+}
+
+#bet-amount {
+    background: rgba(0,0,0,0.3);
+    border: 1px solid #00f2ff;
+    color: #fff;
+    border-radius: 8px;
+    padding: 12px;
+    width: 80%;
+    text-align: center;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.1em;
+}
+#bet-amount::placeholder {
+    color: rgba(255,255,255,0.5);
+}
+
+.button-group {
+    display: flex;
+    gap: 15px;
+    width: 100%;
+}
+
+#play-btn, #cash-out-btn {
+    flex: 1;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.2em;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-transform: uppercase;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+#play-btn {
+    background: linear-gradient(45deg, #00b894, #55efc4);
+    color: #111;
+}
+#cash-out-btn {
+    background: linear-gradient(45deg, #8e44ad, #d279ff);
+    color: #fff;
+}
+#play-btn:hover, #cash-out-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+}
+#play-btn:disabled, #cash-out-btn:disabled {
+    background: #576574;
+    color: #a5a5a5;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+
+#message {
+    text-align: center;
+    padding-bottom: 10px;
+    font-size: 1.1em;
+    font-weight: bold;
+    min-height: 25px; /* Prevent layout shift */
+}
+
+.back-btn {
+    display: block;
+    text-align: center;
+    padding: 10px;
+    background: #ff4757;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    border-radius: 0 0 18px 18px; /* Match container radius */
+}
+.back-btn:hover {
+    background-color: #e02a3a;
+}
+
+#history-container {
+    width: 100%;
+    max-width: 500px;
+    margin-top: 20px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid #00f2ff;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+#history-list {
+    list-style: none;
+    padding: 0;
+    max-height: 150px;
+    overflow-y: auto;
+}
+
+#history-list li {
+    padding: 8px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    font-size: 0.9em;
+}
+#history-list li:last-child {
+    border-bottom: none;
+}
+
+.crashed {
+    color: #ff6b6b; /* Bright Red */
+}
+
+.cashed-out {
+    color: #1dd1a1; /* Bright Green */
+}
+
+.hidden {
+    display: none;
+}
+
+/* Media Query for smaller screens */
+@media (max-width: 420px) {
+    #multiplier {
+        font-size: 3.5em;
+    }
+    #plane {
+        width: 50px;
+        height: 20px;
+    }
+    .button-group {
+        flex-direction: column;
+    }
+}
