@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aviator Crash Game</title>
+    <link rel="stylesheet" href="aviator.css">
+    <!-- IMPORTANT: Add the reCAPTCHA script for App Check -->
+    <script src="https://www.google.com/recaptcha/api.js?render=YOUR_RECAPTCHA_SITE_KEY"></script>
+</head>
+<body>
+    
+    <!-- All game container, controls, and history elements remain the same -->
+    <div id="game-container"><!-- ... --></div>
+    <div id="history-container"><!-- ... --></div>
+
+<!-- SCRIPT LOADING SECTION - MODIFIED -->
+<!-- 1. Load Firebase SDKs -->
+<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-functions-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-check-compat.js"></script>
+
+<!-- 2. Load the secure initializer -->
+<script src="firebase-init.js"></script>
+
+<!-- 3. Load the Aviator game logic -->
+<script src="aviator.js"></script>
+</body>
+</html>
