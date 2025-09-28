@@ -1,0 +1,282 @@
+/* admin-style.css (New Design) */
+:root {
+    --bg-primary: #1a202c;
+    --bg-secondary: #2d3748;
+    --text-primary: #e2e8f0;
+    --text-secondary: #a0aec0;
+    --accent-primary: #4fd1c5;
+    --accent-hover: #38b2ac;
+    --danger: #e53e3e;
+    --success: #38a169;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    -webkit-font-smoothing: antialiased;
+}
+
+.hidden { display: none !important; }
+
+/* --- Login Page --- */
+#login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.login-box {
+    width: 90%;
+    max-width: 400px;
+    background: var(--bg-secondary);
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    text-align: center;
+}
+.login-box h2 {
+    margin-bottom: 25px;
+}
+.login-box input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    background: #1a202c;
+    border: 1px solid #4a5568;
+    border-radius: 6px;
+    color: var(--text-primary);
+    font-size: 16px;
+}
+.login-box input:focus {
+    outline: none;
+    border-color: var(--accent-primary);
+}
+.error-message {
+    color: #f56565;
+    background-color: rgba(229, 62, 62, 0.1);
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    display: none;
+}
+
+/* --- Buttons --- */
+button {
+    padding: 12px 18px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    color: #1a202c;
+    font-weight: 600;
+    font-size: 16px;
+    transition: background-color 0.2s ease;
+}
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+#loginBtn {
+    width: 100%;
+    background-color: var(--accent-primary);
+}
+#loginBtn:hover {
+    background-color: var(--accent-hover);
+}
+.btn-primary { background-color: var(--accent-primary); color: #1a202c; }
+.btn-primary:hover { background-color: var(--accent-hover); }
+.btn-approve { background-color: var(--success); color: white; }
+.btn-reject { background-color: var(--danger); color: white; }
+.btn-edit { background-color: #4299e1; color: white; }
+.btn-cancel { background-color: #718096; color: white; }
+
+/* --- Main Admin Panel Layout --- */
+#admin-panel {
+    display: flex;
+    height: 100vh;
+}
+.sidebar {
+    width: 250px;
+    background: var(--bg-secondary);
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+    border-right: 1px solid #4a5568;
+}
+.sidebar header {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    text-align: center;
+}
+.sidebar nav {
+    flex-grow: 1;
+}
+.sidebar .nav-link {
+    display: block;
+    color: var(--text-secondary);
+    text-decoration: none;
+    padding: 15px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    transition: all 0.2s ease;
+    font-weight: 500;
+}
+.sidebar .nav-link:hover {
+    background-color: #4a5568;
+    color: var(--text-primary);
+}
+.sidebar .nav-link.active {
+    background-color: var(--accent-primary);
+    color: #1a202c;
+}
+#logoutBtn {
+    background: none;
+    border: 1px solid var(--danger);
+    color: var(--danger);
+    width: 100%;
+}
+#logoutBtn:hover {
+    background: var(--danger);
+    color: white;
+}
+
+/* --- Main Content Area --- */
+.content {
+    flex-grow: 1;
+    padding: 40px;
+    overflow-y: auto;
+}
+.content h1 {
+    border-bottom: 1px solid #4a5568;
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+/* Dashboard Stats */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+.stat-card {
+    background: var(--bg-secondary);
+    padding: 25px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.stat-card .icon {
+    width: 48px;
+    height: 48px;
+    padding: 10px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.stat-card .icon svg {
+    width: 24px;
+    height: 24px;
+}
+.stat-card .value {
+    font-size: 28px;
+    font-weight: 700;
+}
+.stat-card .label {
+    color: var(--text-secondary);
+}
+
+/* Table Styles */
+.table-container {
+    background: var(--bg-secondary);
+    border-radius: 8px;
+    padding: 10px;
+    overflow-x: auto;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #4a5568;
+}
+th {
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+td button { padding: 6px 10px; font-size: 14px; }
+
+/* Settings & Forms */
+.settings-form-container, .modal-form {
+    background: var(--bg-secondary);
+    padding: 30px;
+    border-radius: 8px;
+    max-width: 800px;
+}
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    background: #1a202c;
+    border: 1px solid #4a5568;
+    border-radius: 6px;
+    color: var(--text-primary);
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--accent-primary);
+}
+#save-settings-btn { margin-top: 20px; }
+#show-add-game-form { margin-bottom: 20px; }
+
+/* Modal */
+#modal-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+.modal-box {
+    width: 90%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+    background: var(--bg-secondary);
+    padding: 30px;
+    border-radius: 8px;
+}
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #4a5568;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 30px;
+}
