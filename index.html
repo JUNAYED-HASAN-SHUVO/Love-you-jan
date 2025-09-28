@@ -1,0 +1,88 @@
+)<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Money77</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>Money 77</header>
+
+<!-- The list of games will be dynamically inserted here by script.js -->
+<section class="game-section" id="game-section">
+    <div class="loader"></div>
+</section>
+
+<!-- Deposit Modal (Shell) -->
+<div class="modal-overlay" id="depositModal">
+  <div class="modal" id="depositContent">
+    <!-- The form inside is loaded from Firebase -->
+  </div>
+</div>
+
+<!-- Withdraw Modal (Shell) -->
+<div class="modal-overlay" id="withdrawModal">
+  <div class="modal" id="withdrawContent">
+    <!-- The form inside is loaded from Firebase -->
+  </div>
+</div>
+
+<!-- Profile Modal (Shell) -->
+<div class="modal-overlay" id="profileModal">
+  <div class="modal" id="profileContent">
+    <!-- The user's info is generated here by script.js -->
+  </div>
+</div>
+
+<!-- Login Modal (Static and Unchangeable) -->
+<div class="modal-overlay" id="loginModal">
+  <div class="modal">
+    <span class="close" onclick="closeModal('loginModal')">&times;</span>
+    <h2 style="color:#1e90ff;">Welcome Back!</h2>
+    <input type="email" id="loginEmail" placeholder="Email">
+    <input type="password" id="loginPass" placeholder="Password">
+    <button onclick="loginUser()">Login</button>
+    <p style="text-align:center;margin-top:10px;">New user? <a href="#" onclick="switchToSignup()">Sign up first</a></p>
+  </div>
+</div>
+
+<!-- Signup Modal (Static and Unchangeable) -->
+<div class="modal-overlay" id="registerModal">
+  <div class="modal">
+    <span class="close" onclick="closeModal('registerModal')">&times;</span>
+    <h2 style="color:#28a745;">Create Account</h2>
+    <input type="text" id="signupName" placeholder="Full Name">
+    <input type="email" id="signupEmail" placeholder="Email">
+    <input type="password" id="signupPass" placeholder="Password">
+    <button onclick="registerUser()">Register</button>
+    <p style="text-align:center;margin-top:10px;">Already have an account? <a href="#" onclick="switchToLogin()">Login</a></p>
+  </div>
+</div>
+
+<!-- Bottom Navigation (Static and Unchangeable) -->
+<div class="bottom-nav">
+  <div onclick="showSection('homeSection')"><img src="https://img.icons8.com/ios-filled/50/ffffff/home.png"><span>Home</span></div>
+  <div onclick="handleDeposit()"><img src="https://img.icons8.com/ios-filled/50/ffffff/money-transfer.png"><span>Deposit</span></div>
+  <div onclick="handleWithdraw()"><img src="https://img.icons8.com/ios-filled/50/ffffff/withdrawal.png"><span>Withdraw</span></div>
+  <div onclick="openProfile()"><img src="https://img.icons8.com/ios-filled/50/ffffff/user.png"><span>Profile</span></div>
+</div>
+
+<!-- SCRIPT LOADING SECTION -->
+<!-- 1. Load Firebase SDKs first -->
+<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-functions-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-storage-compat.js"></script>
+<!-- Note: The app-check script is not needed since we are skipping it -->
+
+<!-- 2. Load the Firebase initializer -->
+<script src="firebase-init.js"></script> 
+
+<!-- 3. Load the main app logic -->
+<script src="script.js"></script>
+
+</body>
+</html>
